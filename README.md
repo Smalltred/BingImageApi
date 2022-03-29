@@ -17,9 +17,9 @@ pip install gevent
 ---
 ## 路由
 
-http://localhost/api/v1/bing 返回JSON数据
-http://localhost/api/v1/bing/t 返回当天图片 默认4K
-http://localhost/bing/index 展示页面
+http://localhost/api/v1/bing 返回JSON数据  
+http://localhost/api/v1/bing/t 返回当天图片 默认4K  
+http://localhost/bing/index 展示页面  
 
 ## 说明
 
