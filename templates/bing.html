@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bing每日一图 - Monster</title>
+    <link rel="icon" href={{ url_for("static", filename = "images/favicon.png") }}>
+    <link rel="stylesheet" href={{ url_for("static", filename = "css/style.css") }}>
+    <script>
+        const request = new XMLHttpRequest();
+        request.open("GET", "{{ bing.data.url }}", true);
+        request.responseType = 'blob';
+        request.onload=function(){
+            const url = window.URL.createObjectURL(request.response);
+            const a = document.getElementById("down");
+            a.href = url
+            a.download = ''
+        }
+        request.send();
+    </script>
+</head>
+<body>
+<div class="banner">
+    <ul>
+        <li><a href="{{ url_for("bingImageDownload") }}" >Bing icture of the day</a></li>
+    </ul>
+</div>
+<div class="bing-content">
+    <p>{{ bing.data.location }}</p>
+    <img src="{{ bing.data.url }}" alt="{{ bing.data.title }}">
+    <div class="bing-button">
+        <a href="{{  bing.data.url }}" target="_blank">Check</a>
+        <a href="" id="down">Download</a>
+        <a href="{{ url_for("index") }}">Back</a>
+    </div>
+</div>
+</body>
+</html>

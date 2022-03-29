@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        .box{
+            text-align: center;
+            padding: 20px;
+        }
+        a{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+<h1>Welcome, this is a api server</h1>
+<a href="{{ url_for("bingImageData") }}">Bing API</a>
+<a href="{{ url_for("bingImageApi") }}">Bing Image API</a>
+<a href="{{url_for("bingImageDownload") }}">Bing Image Download</a>
+</div>
+</body>
+</html>
